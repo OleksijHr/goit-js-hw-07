@@ -30,8 +30,9 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 
-const createGallery = arr => {
-  return arr.map(({ url, alt }) => {
+const createGallery = (arr, numberImages) => {
+  numberImages = arr.splice(0, 3);
+  return numberImages.map(({ url, alt }) => {
     const li = document.createElement("li");
     const img = document.createElement("img");
 
@@ -45,3 +46,5 @@ const createGallery = arr => {
 
 const galleryMarkup = createGallery(images);
 gallery.append(...galleryMarkup);
+
+

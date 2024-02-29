@@ -1,9 +1,11 @@
 const inputName = document.getElementById("name-input");
 const outputName = document.getElementById("name-output");
 
-
-const placeholder = event => {
-    outputName.textContent = inputName.value !== "" ? event.currentTarget.value : "Anonymous";
+const placeholder = () => {
+    const trimmedValue = inputName.value.trim();
+    outputName.textContent = trimmedValue !== "" ? trimmedValue : "Anonymous";
 }
 
 inputName.addEventListener("input", placeholder);
+
+

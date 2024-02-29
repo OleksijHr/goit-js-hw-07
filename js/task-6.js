@@ -5,9 +5,7 @@ const boxes = document.getElementById("boxes");
 
 
 createBtn.addEventListener("click", () => {
-  if (Number(input.value) <= Number(input.max) || Number(input.value) >= Number(input.min)){
-    // const alert = "<p>Don't worry, everything are work. Fill the form and choyse value on 1 to 100</p>";
-    // boxes.insertAdjacentHTML(alert);
+  if (Number(input.value) <= Number(input.max) && Number(input.value) >= Number(input.min)){
     createBoxes(input.value);
     input.value = "";
   };
@@ -16,7 +14,7 @@ createBtn.addEventListener("click", () => {
 function createBoxes(value) {
   boxes.innerHTML = "";
   const arrBoxes = [];
-  let boxSize = 30;
+  let boxSize = 40;
 
   function getRandomHexColor() {
     return `#${Math.floor(Math.random() * 16777215)
