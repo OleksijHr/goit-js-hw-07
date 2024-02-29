@@ -5,19 +5,18 @@ loginForm.addEventListener("submit", submitHandler);
 function submitHandler(event) {
     event.preventDefault();
 
-    const profile = {};
-
     const email = event.currentTarget.elements.email;
     const password = event.currentTarget.elements.password;
 
     if (email.value === "" || password.value === "") {
         alert("All form fields must be filled in");
     } else {
-        profile.email = email.value;
-        profile.password = password.value;
+        const profile = {};
+
+        profile.email = email.value.trim();
+        profile.password = password.value.trim();
 
         console.log(profile);
+        event.currentTarget.reset();
     }
-
-    event.currentTarget.reset();
 }

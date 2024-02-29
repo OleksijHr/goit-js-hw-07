@@ -156,6 +156,10 @@ button {
 
 /* ---------------- TASK 3 ----------------------- */
 
+.input {
+  margin: 16px 0;
+}
+
 
 /* ---------------- TASK 4 ----------------------- */
 
@@ -231,7 +235,7 @@ button {
 
 
 
-[data-create]{
+[data-create]  {
   background-color: var(--primary-clr);
   border: 1px solid var(--primary-clr);
 

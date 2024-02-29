@@ -30,16 +30,18 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 
-images.forEach(image => {
-  const liElement = document.createElement("li");
-  liElement.classList.add("item");
-  gallery.append(liElement);
+const createGallery = arr => {
+  return arr.map(({ url, alt }) => {
+    const li = document.createElement("li");
+    const img = document.createElement("img");
 
-  const img = document.createElement("img");
-  img.src = `${image.url}`;
-  img.alt = `${image.alt}`;
-  img.width = "360";
-  img.height = "300";
+    img.src = url;
+    img.alt = alt;
+    img.width = 300;
+    li.append(img);
+    return li;
+  })
+}
 
-  liElement.append(img);
-});
+const galleryMarkup = createGallery(images);
+gallery.append(...galleryMarkup);
